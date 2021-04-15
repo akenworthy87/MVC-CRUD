@@ -9,7 +9,7 @@ namespace MVC_CRUD.model
 
         [Required]
         [StringLength(16)]
-        public string Severity { get; set; }
+        public string SeverityName { get; set; }
 
     }
 }
