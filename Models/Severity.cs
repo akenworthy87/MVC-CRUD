@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace MVC_CRUD.model
+namespace MVC_CRUD.Models
 {
     public class Severity
     {
