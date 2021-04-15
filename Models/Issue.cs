@@ -33,5 +33,7 @@ namespace MVC_CRUD.model
         [StringLength(512)]
         public string Resolution { get; set; }
 
+        public bool Resolved { get; set; }
+
     }
 }
