@@ -15,7 +15,9 @@ namespace MVC_CRUD.Models
         [StringLength(50)]
         public string Location { get; set; }
 
-        public Severity Severity { get; set; }
+        // The ID of the foreign key value of the severity level on the Servity table
+        [Display(Name = "Severity")]
+        public int SeverityLevel { get; set; }
 
         [DataType(DataType.Date)]
         [Display(Name = "Submitted Date")]
@@ -36,6 +38,10 @@ namespace MVC_CRUD.Models
         public string Resolution { get; set; }
 
         public bool Resolved { get; set; }
+
+
+        // The navigation linkage between Issue and Severity
+        public Severity Severity { get; set; }
 
     }
 }
