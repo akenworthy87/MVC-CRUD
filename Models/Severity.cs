@@ -9,6 +9,7 @@ namespace MVC_CRUD.Models
 
         [Required]
         [StringLength(16)]
+        [Display(Name = "Severity Name")]
         public string SeverityName { get; set; }
 
     }

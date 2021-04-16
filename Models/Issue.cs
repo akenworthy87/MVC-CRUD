@@ -18,9 +18,11 @@ namespace MVC_CRUD.Models
         public Severity Severity { get; set; }
 
         [DataType(DataType.Date)]
+        [Display(Name = "Submitted Date")]
         public DateTime SubmittedDate { get; set; }
 
         [DataType(DataType.Date)]
+        [Display(Name = "Resolved Date")]
         public DateTime ResolvedDate { get; set; }
 
         [Required]
