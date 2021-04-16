@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MVC_CRUD.Models
 {
-    public class Movie
+    public class Issue
     {
         public int Id { get; set; }
 
@@ -25,7 +25,7 @@ namespace MVC_CRUD.Models
 
         [Required]
         [StringLength(512)]
-        public string Issue { get; set; }
+        public string Description { get; set; }
 
         [StringLength(512)]
         public string Notes { get; set; }

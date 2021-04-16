@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MVC_CRUD.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace MVC_CRUD
 {
@@ -24,6 +26,8 @@ namespace MVC_CRUD
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<MVC_CRUDContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MVC_CRUDContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
