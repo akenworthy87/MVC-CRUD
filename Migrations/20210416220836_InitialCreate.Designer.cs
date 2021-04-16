@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCCRUD.Migrations
 {
     [DbContext(typeof(MVC_CRUDContext))]
-    [Migration("20210416143312_InitialCreate")]
+    [Migration("20210416220836_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,7 +57,7 @@ namespace MVCCRUD.Migrations
                     b.Property<DateTime>("ResolvedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("SeverityId")
+                    b.Property<int>("SeverityId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("SubmittedDate")
@@ -73,9 +73,7 @@ namespace MVCCRUD.Migrations
             modelBuilder.Entity("MVC_CRUD.Models.Severity", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("SeverityName")
                         .IsRequired()
@@ -91,7 +89,9 @@ namespace MVCCRUD.Migrations
                 {
                     b.HasOne("MVC_CRUD.Models.Severity", "Severity")
                         .WithMany()
-                        .HasForeignKey("SeverityId");
+                        .HasForeignKey("SeverityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Severity");
                 });

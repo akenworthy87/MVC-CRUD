@@ -17,7 +17,7 @@ namespace MVC_CRUD.Models
 
         // The ID of the foreign key value of the severity level on the Servity table
         [Display(Name = "Severity")]
-        public int SeverityLevel { get; set; }
+        public int SeverityId { get; set; }
 
         [DataType(DataType.Date)]
         [Display(Name = "Submitted Date")]
