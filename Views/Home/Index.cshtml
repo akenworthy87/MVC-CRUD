@@ -37,7 +37,7 @@
     @foreach (var issue in Model)
     {
         <form asp-action="Update" asp-route-id="@issue.Id">
-            <div class="form-row border">
+            <div class="form-row border mb-1">
                 <div class="col">
                     <input asp-for="@issue.Name" class="form-control px-1" />
                 </div>
