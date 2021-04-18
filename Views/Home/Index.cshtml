@@ -1,7 +1,80 @@
-﻿@{
+﻿@model IEnumerable<MVC_CRUD.Models.Issue>
+
+@{
     ViewData["Title"] = "Home";
 }
 
 <div class="container-fluid">
-    <p>Table goes here...</p>
+    <div class="form-row font-weight-bold">
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Location)
+        </div>
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Severity)
+        </div>
+        <div class="col-1">
+            @Html.DisplayNameFor(model => model.SubmittedDate)
+        </div>
+        <div class="col-1">
+            @Html.DisplayNameFor(model => model.ResolvedDate)
+        </div>
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Description)
+        </div>
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Notes)
+        </div>
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Resolution)
+        </div>
+        <div class="col-1">
+            @Html.DisplayNameFor(model => model.Resolved)
+        </div>
+    </div>
+    @foreach (var issue in Model)
+    {
+        <form asp-action="Update" asp-route-id="@issue.Id">
+            <div class="form-row border">
+                <div class="col">
+                    <input asp-for="@issue.Name" class="form-control px-1" />
+                </div>
+                <div class="col">
+                    <input asp-for="@issue.Location" class="form-control px-1" />
+                </div>
+                <div class="col">
+                    <select asp-for="@issue.SeverityId" class="form-control px-1" asp-items="ViewBag.SeverityId"></select>
+                </div>
+                <div class="col-1">
+                    <input disabled asp-for="@issue.SubmittedDate" class="form-control px-1" />
+                </div>
+                <div class="col-1">
+                    <input disabled asp-for="@issue.ResolvedDate" class="form-control px-1" />
+                </div>
+                <div class="col">
+                    <textarea asp-for="@issue.Description" class="form-control px-1" rows="5"></textarea>
+                </div>
+                <div class="col">
+                    <textarea asp-for="@issue.Notes" class="form-control px-1" rows="5"></textarea>
+                </div>
+                <div class="col">
+                    <textarea asp-for="@issue.Resolution" class="form-control px-1" rows="5"></textarea>
+                </div>
+                <div class="col-1">
+                    <div class="row">
+                        <div class="col pt-1">
+                            <input type="checkbox" asp-for="@issue.Resolved" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col pt-1">
+                            <input type="submit" value="Update" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    }
 </div>
