@@ -4,14 +4,16 @@ using MVC_CRUD.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MVCCRUD.Migrations
 {
     [DbContext(typeof(MVC_CRUDContext))]
-    partial class MVC_CRUDContextModelSnapshot : ModelSnapshot
+    [Migration("20210418201741_IssueDatesNullable")]
+    partial class IssueDatesNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
