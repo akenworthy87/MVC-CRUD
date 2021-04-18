@@ -20,10 +20,10 @@ namespace MVCCRUD.Migrations
                               ,[Notes]
                               ,[Resolution]
                               ,[Resolved]
-                          FROM [MVC_CRUDContext-1].[dbo].[Issue]
+                        FROM [MVC_CRUDContext-1].[dbo].[Issue]
                     END";
 
-                migrationBuilder.Sql(sp);
+            migrationBuilder.Sql(sp);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
